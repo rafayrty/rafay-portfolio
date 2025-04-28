@@ -68,6 +68,7 @@ export default function Terminal() {
       fontSize: 16,
       fontFamily: 'Menlo, Monaco, "Courier New", monospace',
       scrollback: 1000,
+      disableStdin: typeof window !== 'undefined' && window.innerWidth <= 768, // ⬅️ ADD THIS LINE
       allowTransparency: true
     });
 
@@ -88,6 +89,10 @@ export default function Terminal() {
 
     term.open(terminalRef.current);
     fitAddon.fit();
+
+    if (typeof window !== 'undefined' && window.innerWidth <= 768) {
+      term.textarea?.blur();
+    }
 
     termRef.current = term;
     fitAddonRef.current = fitAddon;
