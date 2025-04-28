@@ -1,0 +1,42 @@
+.terminal-container {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  background-color: #282828;
+}
+
+.terminal {
+  height: 100%;
+  width: 100%;
+  padding: 20px;
+}
+
+.hint {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: #3c3836;
+  padding: 10px;
+  border: 1px solid #665c54;
+  color: #ebdbb2;
+  font-size: 14px;
+  font-family: monospace;
+  z-index: 1000;
+}
+
+.hint p {
+  margin-top: .5rem;
+}
+
+.hint code {
+  color: #fabd2f;
+  background: #282828;
+  padding: 2px 4px;
+  border-radius: 3px;
+}
+
+@media only screen and (max-width:768px) {
+  .hint {
+    display: none;
+  }
+}
